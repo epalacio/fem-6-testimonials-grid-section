@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
 
+/* ---------- General ---------- */
 :root {
     --blackBlue: hsl(219, 29%, 14%);
     --grayishBlue: hsl(217, 19%, 35%);
@@ -21,11 +22,160 @@ body {
     font-size: 13px;
 }
 
+/* ---------- Container ---------- */
+.container {
+    display: grid;
+    grid-gap: 30px;
+    margin: 30px;
+}
+
+/* ---------- Cards > General ---------- */
+
+.card {
+    border-radius: 6px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    padding: 30px;
+}
+
+.title-banner {
+    align-items: center;
+    display: flex;
+}
+
+.title-section {
+    margin-left: 10px;
+}
+
+.title-name {
+    font-size: 16px;
+}
+
+.card img {
+    border: 3px solid transparent;
+    border-radius: 50%;
+    max-width: 40px;
+}
+
+.review-main {
+    font-size: 23px;
+    margin: 15px auto;
+}
+
+.review-secondary {
+    line-height: 1.5;
+}
+
+/* ---------- Cards > Specific ---------- */
+
+.card-1 {
+    background-color: var(--modViolet);
+}
+
+.card-2 {
+    background-color: var(--grayishBlue);
+}
+
+.card-3,
+.card-5 {
+    background-color: var(--white);
+    color: var(--grayishBlue);
+}
+
+.card-4 {
+    background-color: var(--blackBlue);
+}
+
+.card-1 img,
+.card-4 img {
+    border: 3px solid var(--modViolet)
+}
+
+.card-1,
+.card-2,
+.card-4 {
+    color: var(--white);
+}
+
+.card-1 .title-tag,
+.card-2 .title-tag,
+.card-4 .title-tag {
+    color: hsla(0, 0%, 100%, 50%);
+}
+
+.card-1 .review-secondary,
+.card-2 .review-secondary,
+.card-4 .review-secondary {
+    color: hsla(0, 0%, 100%, 70%);
+}
+
+
+.card-3 .title-tag,
+.card-5 .title-tag {
+    color: hsla(217, 19%, 35%, 50%);
+}
+
+.card-3 .review-secondary,
+.card-5 .review-secondary {
+    color: hsla(217, 19%, 35%, 70%);
+}
+
+
+/* ---------- Attribution ---------- */
 
 .attribution {
-    font-size: 11px; 
+    font-size: 13px; 
     text-align: center; 
+    margin-top: 10px;
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: var(--grayishBlue); 
+}
+
+/* ---------- Media Query ---------- */
+
+
+
+@media screen and (min-width: 800px) {
+    .container {
+        display: grid;
+        grid-gap: 30px;
+        margin: 130px;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        display: grid;
+        grid-gap: 30px;
+        margin: 130px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .card-1 {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .card-2 {
+        grid-column: 3 / 4;
+        grid-row: 1;
+    }
+
+    .card-3 {
+        grid-column: 1 / 2;
+        grid-row: 2;
+    }
+
+    .card-4 {
+        grid-column: 2 / 4;
+        grid-row: 2;
+    }
+
+    .card-5 {
+        grid-column: 4 / 5;
+        grid-row: 1 / 3;
+    }
 }
